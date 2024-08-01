@@ -30,7 +30,7 @@ If you're connected an android phone or using an android emulator, use this comm
 
 If you're connected an iOS phone or using an iOS emulator, use this command to launch the app.
 
-## Screenshots
+## Preview
 
 
 
