@@ -12,7 +12,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 
 export default function ContentView() {
@@ -133,7 +133,7 @@ export default function ContentView() {
             style={styles.buttonContainer}
             onPress={onClickSubtract}
           >
-            <FontAwesome6 name="minus" size={32} style={styles.buttonIcon} />
+            <FontAwesome6 name="minus" size={28} style={styles.buttonIcon} />
             {/* <Text style={styles.buttonText}>Subtract</Text> */}
           </TouchableOpacity>
         </View>
@@ -145,7 +145,7 @@ export default function ContentView() {
             style={styles.buttonContainer}
             onPress={onClickDivide}
           >
-            <FontAwesome6 name="divide" size={32} style={styles.buttonIcon} />
+            <FontAwesome6 name="divide" size={28} style={styles.buttonIcon} />
             {/* <Text style={styles.buttonText}>Division</Text> */}
           </TouchableOpacity>
         </View>
@@ -154,7 +154,7 @@ export default function ContentView() {
             style={styles.buttonContainer}
             onPress={onClickMultiply}
           >
-            <FontAwesome6 name="xmark" size={32} style={styles.buttonIcon} />
+            <FontAwesome6 name="xmark" size={28} style={styles.buttonIcon} />
             {/* <Text style={styles.buttonText}>Multiply</Text> */}
           </TouchableOpacity>
         </View>
@@ -166,11 +166,7 @@ export default function ContentView() {
             style={styles.buttonContainer}
             onPress={onClickReset}
           >
-            <FontAwesome6
-              name="delete-left"
-              size={32}
-              style={styles.buttonIcon}
-            />
+            <FontAwesome6 name="eraser" size={28} style={styles.buttonIcon} />
             {/* <Text style={styles.buttonText}>Reset</Text> */}
           </TouchableOpacity>
         </View>
@@ -186,13 +182,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#0C8EA5",
+    backgroundColor: "#00C3F3",
     padding: 10,
     borderRadius: 5,
   },
   buttonIcon: {
     marginLeft: 90,
-    color: "#ffffff",
+    color: "#fff",
   },
   // buttonText: {
   //   color: "#fff",
@@ -201,7 +197,7 @@ const styles = StyleSheet.create({
   //   letterSpacing: 1,
   // },
   label: {
-    color: "#466BB1",
+    color: "#00C3F3",
     fontFamily: "Poppins_600SemiBold",
     fontSize: 14,
     fontWeight: "bold",
@@ -212,9 +208,10 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 10,
-    borderColor: "#108CA4",
+    borderColor: "#3B68AB",
+    color: "#fff",
   },
   fixToText: {
     flexDirection: "row",

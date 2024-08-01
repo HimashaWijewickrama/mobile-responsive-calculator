@@ -10,27 +10,47 @@ export default function MainView() {
     return null;
   }
   return (
-    <View style={styles.main}>
-      <Text style={styles.title}>Calculator</Text>
-      <ContentView />
+    <View style={styles.container}>
+      <View style={styles.mainContainer}>
+        <View style={styles.blurBackground} />
+        <View style={styles.content}>
+          <Text style={styles.title}>Calculator</Text>
+          <ContentView />
+        </View>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  main: {
-    backgroundColor: "#e3fbff",
-    opacity: 0.8,
-    borderColor: "#0C8EA5",
-    borderWidth: 8,
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  mainContainer: {
+    position: "relative",
+    borderColor: "#5157A3", 
+    borderWidth: 5,
     borderRadius: 50,
+    overflow: "hidden",
+    backgroundColor: "transparent",
+  },
+  blurBackground: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0, 0, 0, 0.3)", 
+  },
+  content: {
+    padding: 20,
   },
   title: {
-    color: "#3B99D1",
+    color: "#00C3F3",
     fontFamily: "Poppins_600SemiBold",
     textTransform: "uppercase",
     fontSize: 35,
     lineHeight: 84,
     textAlign: "center",
+    marginBottom: 0,
+    paddingBottom: 0,
   },
 });
