@@ -1,22 +1,19 @@
 import {
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  Text,
-  Button,
-  Alert,
-  View,
-  TouchableOpacity,
-} from "react-native";
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+  useFonts,
+} from "@expo-google-fonts/poppins";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import React, { useState } from "react";
 import {
-  useFonts,
-  Poppins_400Regular,
-  Poppins_700Bold,
-  Poppins_600SemiBold,
-} from "@expo-google-fonts/poppins";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
+} from "react-native";
 
 export default function ContentView() {
   const [inputOne, setInputOne] = useState("");
@@ -197,12 +194,12 @@ const styles = StyleSheet.create({
     marginLeft: 90,
     color: "#ffffff",
   },
-  buttonText: {
-    color: "#fff",
-    marginLeft: 10,
-    fontFamily: "Poppins_700Bold",
-    letterSpacing: 1,
-  },
+  // buttonText: {
+  //   color: "#fff",
+  //   marginLeft: 10,
+  //   fontFamily: "Poppins_700Bold",
+  //   letterSpacing: 1,
+  // },
   label: {
     color: "#466BB1",
     fontFamily: "Poppins_600SemiBold",
