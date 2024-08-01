@@ -4,7 +4,7 @@
 
 This is a simple calculator that has built using React Native and Expo. TypeScript and JavaScript have used to implement the interfaces and logical operations. CSS has used to style the interfaces.
 
-**Other Resources;**
+**Other Resources :**
 
 - Icons from expo/vector-icons
 - Custom font families from expo/google-fonts
@@ -38,6 +38,7 @@ If you're connected an iOS phone or using an iOS emulator, use this command to l
 
 ## Preview
 
+![simple-calculator](https://github.com/user-attachments/assets/ec4ff925-c03a-4cb2-902b-ba89196555a0)
 
 
 ## Demostration
