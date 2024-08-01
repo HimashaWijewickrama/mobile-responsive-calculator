@@ -6,8 +6,17 @@ import {
   Button,
   Alert,
   View,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_700Bold,
+  Poppins_600SemiBold,
+} from "@expo-google-fonts/poppins";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
 export default function ContentView() {
   const [inputOne, setInputOne] = useState("");
@@ -15,6 +24,16 @@ export default function ContentView() {
   const [showResult, setShowResult] = useState("");
   const [errorInputOne, setErrorInputOne] = useState("");
   const [errorInputTwo, setErrorInputTwo] = useState("");
+
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_700Bold,
+    Poppins_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   const onChangeInputOne = (newInputOne: string) => {
     setInputOne(newInputOne);
@@ -77,7 +96,7 @@ export default function ContentView() {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.contentView}>
       <Text style={styles.label}>Enter Number One : </Text>
       <TextInput
         style={styles.input}
@@ -97,24 +116,6 @@ export default function ContentView() {
         keyboardType="numeric"
       />
       {errorInputTwo ? <Text style={styles.error}>{errorInputTwo}</Text> : null}
-
-      <View style={styles.fixToText}>
-        <View style={styles.fixToButton}>
-          <Button title="Add + " onPress={onClickAdd} />
-        </View>
-        <View style={styles.fixToButton}>
-          <Button title="Subtract - " onPress={onClickSubtract} />
-        </View>
-      </View>
-      <View style={styles.fixToText}>
-        <View style={styles.fixToButton}>
-          <Button title="Multiply x " onPress={onClickMultiply} />
-        </View>
-        <View style={styles.fixToButton}>
-          <Button title="Divide / " onPress={onClickDivide} />
-        </View>
-      </View>
-
       <Text style={styles.label}>Final Result : </Text>
       <TextInput
         style={styles.input}
@@ -125,7 +126,56 @@ export default function ContentView() {
       />
       <View style={styles.fixToText}>
         <View style={styles.fixToButton}>
-          <Button title="Reset " onPress={onClickReset} />
+          <TouchableOpacity style={styles.buttonContainer} onPress={onClickAdd}>
+            <FontAwesome6 name="add" size={32} style={styles.buttonIcon} />
+            {/* <Text style={styles.buttonText}>Addition</Text> */}
+          </TouchableOpacity>
+        </View>
+        <View style={styles.fixToButton}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={onClickSubtract}
+          >
+            <FontAwesome6 name="minus" size={32} style={styles.buttonIcon} />
+            {/* <Text style={styles.buttonText}>Subtract</Text> */}
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <View style={styles.fixToText}>
+        <View style={styles.fixToButton}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={onClickDivide}
+          >
+            <FontAwesome6 name="divide" size={32} style={styles.buttonIcon} />
+            {/* <Text style={styles.buttonText}>Division</Text> */}
+          </TouchableOpacity>
+        </View>
+        <View style={styles.fixToButton}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={onClickMultiply}
+          >
+            <FontAwesome6 name="xmark" size={32} style={styles.buttonIcon} />
+            {/* <Text style={styles.buttonText}>Multiply</Text> */}
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <View style={styles.fixToText}>
+        <View style={styles.fixToButton}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={onClickReset}
+          >
+            <FontAwesome6
+              name="delete-left"
+              size={32}
+              style={styles.buttonIcon}
+            />
+            {/* <Text style={styles.buttonText}>Reset</Text> */}
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -133,13 +183,29 @@ export default function ContentView() {
 }
 
 const styles = StyleSheet.create({
-  content: {
-    backgroundColor: "#F0F0F0",
-    opacity: 0.8,
+  contentView: {
+    margin: 30,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#0C8EA5",
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonIcon: {
+    marginLeft: 90,
+    color: "#ffffff",
+  },
+  buttonText: {
+    color: "#fff",
+    marginLeft: 10,
+    fontFamily: "Poppins_700Bold",
+    letterSpacing: 1,
   },
   label: {
-    color: "#03346E",
-    fontFamily: "Arial",
+    color: "#466BB1",
+    fontFamily: "Poppins_600SemiBold",
     fontSize: 14,
     fontWeight: "bold",
     textAlign: "left",
@@ -151,7 +217,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    borderColor: "red",
+    borderColor: "#108CA4",
   },
   fixToText: {
     flexDirection: "row",
@@ -163,17 +229,17 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   error: {
-    color: "red",
+    color: "#ff3333",
     fontSize: 12,
     marginLeft: 12,
     marginBottom: 8,
-    fontWeight: 600
+    fontWeight: 600,
   },
   userMessage: {
-    color: "red",
+    color: "#ff3333",
     fontFamily: "Arial",
     fontSize: 10,
-    fontWeight: "bold",
+    fontWeight: 600,
     textAlign: "left",
     margin: 5,
     padding: 5,
