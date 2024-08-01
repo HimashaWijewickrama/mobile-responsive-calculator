@@ -2,42 +2,31 @@
 
 ## Project Overview
 
-The Vidly movie rendering web application built using MERN Stack and bootstrap.
-
-## Prerequisites
-
-- Install the Node.js : version 18.16.1
-- Node Package Manager (npm) : version 9.5.1 (This is comming bundled with node)
-- Visual Studio Code Editor (VSCode Editor)
-
-## Used Packages and Dependencies
-
-- react bootstrap : latest version 2.10.2
-- bootstrap   : latest version 5.3.3
-- react icons : latest version 5.2.1
-- react loader spinner : latest version 6.1.6
-- react-dom   : latest version 18.3.1
-- react-router-dom : latest version 6.23.1
+This is a simple calculator has built using React Native, TypeScript and CSS. This follows mobile and web responsive design.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npx expo start`
 
-Runs the app in the development mode.\
-Open http://localhost:3000 to view it in the browser.
+Starts the Expo development server. Let you to open app using Expo app from your mobile phone or from an emulator. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm expo start --web`
 
-### `npm run build`
+Launch the app in your default web browser.
 
-Compiles the project for production.
+### `npm expo start --android`
+
+If you're connected an android phone or using an android emulator, use this command to launch the app.
+
+### `npm expo start --ios`
+
+If you're connected an iOS phone or using an iOS emulator, use this command to launch the app.
 
 ## Screenshots
 
-![screencapture-localhost-3000-2024-07-16-16_14_41](https://github.com/user-attachments/assets/c12ce5fa-cffc-4038-9510-ae0b8a326b58)
+
 
 ## Demostration
 
