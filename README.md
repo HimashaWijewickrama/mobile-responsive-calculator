@@ -7,6 +7,7 @@ This is a simple calculator that has built using React Native and Expo. TypeScri
 ## Features
 
 -  App allows users to perform basic mathematical opertions(like addition, subtraction, division, multiplication) by inputing two numberical values.
+  
 -  All the user input fields have validated. Because of that, anyone can't enter invalid inputs.(can't enter letters and characters, other than numbers).
 
 ## Available Scripts
