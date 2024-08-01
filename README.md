@@ -2,7 +2,13 @@
 
 ## Project Overview
 
-This is a simple calculator that has built using React Native and Expo. TypeScript and JavaScript have used to implement the interfaces and logical operations. CSS has used to style the interfaces. 
+This is a simple calculator that has built using React Native and Expo. TypeScript and JavaScript have used to implement the interfaces and logical operations. CSS has used to style the interfaces.
+
+**Other Resources;**
+
+- Icons from expo/vector-icons
+- Custom font families from expo/google-fonts
+
 
 ## Features
 
