@@ -13,12 +13,16 @@ export default function ContentView() {
   const [inputOne, setInputOne] = useState("");
   const [inputTwo, setInputTwo] = useState("");
   const [showResult, setShowResult] = useState("");
+  const [errorInputOne, setErrorInputOne] = useState("");
+  const [errorInputTwo, setErrorInputTwo] = useState("");
 
   const onChangeInputOne = (newInputOne: string) => {
     setInputOne(newInputOne);
+    setErrorInputOne("");
   };
   const onChangeInputTwo = (newInputTwo: string) => {
     setInputTwo(newInputTwo);
+    setErrorInputTwo("");
   };
   const onChangeShowResult = (newAnswer: string) => {
     setShowResult(newAnswer);
@@ -27,34 +31,51 @@ export default function ContentView() {
     setInputOne("");
     setInputTwo("");
     setShowResult("");
+    setErrorInputOne("");
+    setErrorInputTwo("");
   };
 
-  var message = "";
-
-  var inputOneInt = parseInt(inputOne);
-  var inputTwoInt = parseInt(inputTwo);
+  const validateInputs = () => {
+    let valid = true;
+    if (isNaN(Number(inputOne)) || inputOne.trim() === "") {
+      setErrorInputOne("Please enter a valid number*");
+      valid = false;
+    }
+    if (isNaN(Number(inputTwo)) || inputTwo.trim() === "") {
+      setErrorInputTwo("Please enter a valid number*");
+      valid = false;
+    }
+    return valid;
+  };
 
   const onClickAdd = () => {
-    console.log(inputOne);
-    if (inputOne === " " || inputTwo === " ") {
-      message = "Please enter numbers";
-    } else {
-      let addingAnswer = inputOneInt + inputTwoInt;
+    if (validateInputs()) {
+      let addingAnswer = parseInt(inputOne) + parseInt(inputTwo);
       setShowResult(addingAnswer.toString());
     }
   };
+
   const onClickSubtract = () => {
-    let deductingAnswer = parseInt(inputOne) - parseInt(inputTwo);
-    setShowResult(deductingAnswer.toString());
+    if (validateInputs()) {
+      let deductingAnswer = parseInt(inputOne) - parseInt(inputTwo);
+      setShowResult(deductingAnswer.toString());
+    }
   };
+
   const onClickMultiply = () => {
-    let multiplyingAnswer = parseInt(inputOne) * parseInt(inputTwo);
-    setShowResult(multiplyingAnswer.toString());
+    if (validateInputs()) {
+      let multiplyingAnswer = parseInt(inputOne) * parseInt(inputTwo);
+      setShowResult(multiplyingAnswer.toString());
+    }
   };
+
   const onClickDivide = () => {
-    let dividingAnswer = parseInt(inputOne) / parseInt(inputTwo);
-    setShowResult(dividingAnswer.toString());
+    if (validateInputs()) {
+      let dividingAnswer = parseInt(inputOne) / parseInt(inputTwo);
+      setShowResult(dividingAnswer.toString());
+    }
   };
+
   return (
     <SafeAreaView>
       <Text style={styles.label}>Enter Number One : </Text>
@@ -65,8 +86,9 @@ export default function ContentView() {
         placeholder="Enter your 1st number*"
         keyboardType="numeric"
       />
-      <Text style={styles.label}>Enter Number Two : </Text>
+      {errorInputOne ? <Text style={styles.error}>{errorInputOne}</Text> : null}
 
+      <Text style={styles.label}>Enter Number Two : </Text>
       <TextInput
         style={styles.input}
         value={inputTwo}
@@ -74,6 +96,8 @@ export default function ContentView() {
         placeholder="Enter your 2nd number*"
         keyboardType="numeric"
       />
+      {errorInputTwo ? <Text style={styles.error}>{errorInputTwo}</Text> : null}
+
       <View style={styles.fixToText}>
         <View style={styles.fixToButton}>
           <Button title="Add + " onPress={onClickAdd} />
@@ -84,16 +108,14 @@ export default function ContentView() {
       </View>
       <View style={styles.fixToText}>
         <View style={styles.fixToButton}>
-          <Button title="Mulitply x " onPress={onClickMultiply} />
+          <Button title="Multiply x " onPress={onClickMultiply} />
         </View>
         <View style={styles.fixToButton}>
           <Button title="Divide / " onPress={onClickDivide} />
         </View>
       </View>
 
-      <Text style={styles.userMessage}>{message}</Text>
       <Text style={styles.label}>Final Result : </Text>
-
       <TextInput
         style={styles.input}
         value={showResult}
@@ -139,6 +161,13 @@ const styles = StyleSheet.create({
   fixToButton: {
     width: "50%",
     padding: 5,
+  },
+  error: {
+    color: "red",
+    fontSize: 12,
+    marginLeft: 12,
+    marginBottom: 8,
+    fontWeight: 600
   },
   userMessage: {
     color: "red",

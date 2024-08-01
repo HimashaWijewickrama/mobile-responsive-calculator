@@ -4,13 +4,7 @@ import ContentView from "./ContentView";
 export default function MainView() {
   return (
     <View style={styles.main}>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <View style={{ flex: 1, height: 1, backgroundColor: "#03346E" }} />
-        <View>
-          <Text style={styles.title}>Simple Calculator</Text>
-        </View>
-        <View style={{ flex: 1, height: 1, backgroundColor: "#03346E" }} />
-      </View>
+          <Text style={styles.title}>Calculator</Text>
       <ContentView />
     </View>
   );
