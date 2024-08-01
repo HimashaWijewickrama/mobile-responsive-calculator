@@ -1,16 +1,15 @@
 import React from "react";
 import { StyleSheet, View, Text, ImageBackground } from "react-native";
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from "expo-status-bar";
 import MainView from "./components/MainView";
 
 const image = require("./assets/background-image.jpg");
 
-
 const App = () => (
   <View style={styles.container}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <MainView />
-      </ImageBackground>
+    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <MainView />
+    </ImageBackground>
     <StatusBar style="light" />
   </View>
 );
