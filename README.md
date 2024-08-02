@@ -43,7 +43,7 @@ If you're connected an iOS phone or using an iOS emulator, use this command to l
 
 ## Demostration
 
-[![Watch the video](https://img.youtube.com/vi/BISs88mwvfA/maxresdefault.jpg)](https://youtu.be/ro--PyXnV8o?si=iAZPtdUljE1wCNjW)
+[![Watch the video](https://img.youtube.com/vi/ro--PyXnV8o?si=iAZPtdUljE1wCNjW/maxresdefault.jpg)](https://youtu.be/ro--PyXnV8o?si=iAZPtdUljE1wCNjW)
 
 
 
