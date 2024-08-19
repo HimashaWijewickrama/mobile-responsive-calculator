@@ -41,10 +41,6 @@ If you're connected an iOS phone or using an iOS emulator, use this command to l
 ![simple-calculator](https://github.com/user-attachments/assets/ec4ff925-c03a-4cb2-902b-ba89196555a0)
 
 
-## Demostration
-
-[![Watch the video](https://img.youtube.com/vi/ro--PyXnV8o/maxresdefault.jpg)](https://youtu.be/ro--PyXnV8o)
-
 
 
 
